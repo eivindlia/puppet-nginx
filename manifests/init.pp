@@ -1,8 +1,8 @@
 class nginx(
   String $ensure                        = $::nginx::params::ensure,
   String $package_name                  = $::nginx::params::package_name,
-  String $config_dir			= $::nginx::params::config_dir,
-  String $config_ensure			= $::nginx::params::config_ensure,
+  String $config_dir                    = $::nginx::params::config_dir,
+  String $config_ensure	                = $::nginx::params::config_ensure,
   String $config_mode			= $::nginx::params::config_mode,
   String $config_owner			= $::nginx::params::config_owner,
   String $config_group			= $::nginx::params::config_group,
@@ -18,7 +18,6 @@ class nginx(
   Boolean $service_hasstatus		= $::nginx::params::service_hasstatus,
   Boolean $service_hasrestart		= $::nginx::params::service_hasrestart,
   String $docroot			= $::nginx::params::docroot,
-
 ) inherits ::nginx::params {
   class { '::nginx::install': }
   -> class { '::nginx::config': }

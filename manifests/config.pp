@@ -28,8 +28,8 @@ class nginx::config(
   file { $docroot:
     ensure  => directory,
     recurse => true,
-    mode    => $mode,
     owner   => $owner,
     group   => $group,
+    mode    => '0775',
   }
 }
